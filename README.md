@@ -43,13 +43,13 @@ It runs as a script in your Google Drive.  To install:
 6.  Click File>Project properties and click on 'User properties' tab.
 7.  Define some Properties:
 
-Property: evernoteMail                  Value: /<your Evernote email address/>
+Property: evernoteMail                  Value: -your Evernote email address-
 
-Property: defaultNotebook_reader        Value: /<the Evernote notebook you want to save article into/>
+Property: defaultNotebook_reader        Value: -the Evernote notebook you want to save article into-
 
-Property: GoogleUsername                Value: <your Google email address>
+Property: GoogleUsername                Value: -your Google email address-
 
-Property: GooglePassword                Value: <your Google password>
+Property: GooglePassword                Value: -your Google password-
 
 8.  Configure how often it runs.  Click Resources>All your triggers, then 'Add a new trigger', and 
     configure to run as often as you want.  
