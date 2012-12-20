@@ -64,6 +64,9 @@ b) If you are using Google two-step authentication, you will need to generate an
 --For more information on the Google Reader API--
 
 http://mobile.tutsplus.com/tutorials/mobile-web-apps/building-a-mobile-web-application-with-the-google-reader-api/
+
 http://blog.martindoms.com/2009/08/15/using-the-google-reader-api-part-1/
+
 http://undoc.in/googlereader.html
+
 http://eamann.com/tech/google-reader-api-a-brief-tutorial/
