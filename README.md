@@ -60,6 +60,7 @@ a) The Evernote email address referenced in (7) is the secret one you use to sen
    via email,  not the email address associated with your account.  You can get your Evernote email 
    address from Tools>Account Info in the PC application, or from the 'Settings' pulldown menu on the 
    web site.
+   
 b) If you are using Google two-step authentication, you will need to generate an 
    application-specific password.  In Gmail, click on 'Gear icon'>Settings and select 'Accounts' 
    tab, then click 'Google Account settings', then 'Security', then 'Manage access' under 
