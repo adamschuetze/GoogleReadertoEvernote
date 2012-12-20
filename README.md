@@ -20,7 +20,9 @@ I also relied heavily on the excellent documention of the Google Reader API in M
 of articles:
 
 http://blog.martindoms.com/2009/08/15/using-the-google-reader-api-part-1/
+
 http://blog.martindoms.com/2009/08/15/using-the-google-reader-api-part-2/
+
 http://blog.martindoms.com/2009/08/15/using-the-google-reader-api-part-3/
 
 --Functionality--
