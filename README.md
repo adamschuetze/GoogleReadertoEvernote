@@ -43,9 +43,9 @@ It runs as a script in your Google Drive.  To install:
 6.  Click File>Project properties and click on 'User properties' tab.
 7.  Define some Properties:
 
-Property: evernoteMail                  Value: <your Evernote email address>
+Property: evernoteMail                  Value: /<your Evernote email address/>
 
-Property: defaultNotebook_reader        Value: <the Evernote notebook you want to save article into>
+Property: defaultNotebook_reader        Value: /<the Evernote notebook you want to save article into/>
 
 Property: GoogleUsername                Value: <your Google email address>
 
