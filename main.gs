@@ -87,6 +87,7 @@ function ReadertoEvernote () {
     var item_title=''
     var item_summary='';
     var item_feedname='';
+    var message_body='';
   
     for (i=0;i<items.length;i++) {  
       item_stream=getItemStreamId(items[i]);
@@ -99,14 +100,15 @@ function ReadertoEvernote () {
       GmailApp.sendEmail(UserProperties.getProperty('evernoteMail'), item_title+' @'
         +UserProperties.getProperty('defaultNotebook_reader'), '', {noReply:true, htmlBody: message_body});
       unstarArticle(item_id,item_stream,urlApi,userAgent,authentication[1],authentication[2]); 
+      markreadArticle(item_id,item_stream,urlApi,userAgent,authentication[1],authentication[2]); 
     }
   }
 }
 
 // Returns an array of values
 // [0] Authentication state (true/false)
-// [1] Auth
-// [2] Token
+// [1] Auth value
+// [2] Token value
 function login (GoogleUsername,GooglePassword,urlAuth,urlToken,userAgent){
   var authentication=new Array(3);
   var result=postAnonUrl(urlAuth, '&Email='+GoogleUsername+'&Passwd='+GooglePassword+'&service=reader&source='+userAgent);
@@ -115,7 +117,6 @@ function login (GoogleUsername,GooglePassword,urlAuth,urlToken,userAgent){
     authentication[0]=true;
     var match=auth_regexp.exec(result);
     authentication[1]=match[1];
-    Logger.log('AUTH: '+match[1]);
     authentication[2]=getUrl(urlToken,authentication[1]);
   } else {
     authentication[0]=false; 
@@ -132,6 +133,12 @@ function getStarredItems (n,urlStream,userAgent,auth) {
 function unstarArticle(id,stream,urlApi,userAgent,auth,token) {
   var url = urlApi+'/edit-tag?client='+userAgent;
   var data = 'r=user/-/state/com.google/starred&async=true&s='+stream+'&i='+id+'&T='+token;
+  return postUrl(url,data,auth);
+}
+
+function markreadArticle(id,stream,urlApi,userAgent,auth,token) {
+  var url = urlApi+'/edit-tag?client='+userAgent;
+  var data = 'a=user/-/state/com.google/read&async=true&s='+stream+'&i='+id+'&T='+token;
   return postUrl(url,data,auth);
 }
 
