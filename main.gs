@@ -87,6 +87,7 @@ function ReadertoEvernote () {
     var item_title=''
     var item_summary='';
     var item_feedname='';
+    var item_date= new Date();
     var message_body='';
   
     for (i=0;i<items.length;i++) {  
@@ -96,7 +97,8 @@ function ReadertoEvernote () {
       item_title=getItemTitle(items[i]);
       item_summary=getItemContent(items[i]);
       item_feedname=getItemFeedname(items[i]);
-      message_body=item_feedname+"<br><a href=\""+item_url+"\">"+item_url+"</a><br><br>"+item_summary;
+      item_date=Date(Number(getItemDate(items[i]))*1000);
+      message_body=item_date.toString()+"<br>"+item_feedname+"<br><a href=\""+item_url+"\">"+item_url+"</a><br><br>"+item_summary;
       GmailApp.sendEmail(UserProperties.getProperty('evernoteMail'), item_title+' @'
         +UserProperties.getProperty('defaultNotebook_reader'), '', {noReply:true, htmlBody: message_body});
       unstarArticle(item_id,item_stream,urlApi,userAgent,authentication[1],authentication[2]); 
@@ -186,4 +188,8 @@ function getItemContent (item) {
 
 function getItemFeedname (item) {
   return item.origin.title;
+}
+
+function getItemDate (item) {
+  return item.updated;
 }
